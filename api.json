@@ -10,14 +10,6 @@
     },
     {
       "favorito": false,
-      "id": "a1d2b3c4-0001-0001-0001-000000000001",
-      "nome": "João Silva",
-      "cargo": "Desenvolvedor Backend",
-      "imagem": "https://randomuser.me/api/portraits/men/1.jpg",
-      "time": "faa6dd47-7697-45a5-91b7-987b30577f03"
-    },
-    {
-      "favorito": false,
       "id": "a1d2b3c4-0001-0001-0001-000000000002",
       "nome": "Maria Oliveira",
       "cargo": "Analista de Sistemas",

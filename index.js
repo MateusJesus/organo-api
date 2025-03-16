@@ -4,6 +4,7 @@ const cors = require("cors");
 app.listen(3030, console.log("api running"));
 
 app.use(cors());
+app.use(express.json());
 
 app.get("/colaboradores", (req, res) => {
   res.send({
@@ -362,6 +363,28 @@ app.get("/times", (req, res) => {
     ],
   });
 });
+
+app.post("/colaboradores", (req, res) => {
+  const { nome, cargo, imagem, time } = req.body;
+
+  if (!nome || !cargo || !imagem || !time) {
+    return res.status(400).json({ error: "Todos os campos são obrigatórios" });
+  }
+
+  const novoColaborador = {
+    favorito: false,
+    id: uuidv4(),
+    nome,
+    cargo,
+    imagem,
+    time,
+  };
+
+  colaboradores.push(novoColaborador);
+  res.status(201).json(novoColaborador);
+});
+
+app.listen(PORT, () => console.log(`API rodando na porta ${PORT}`));
 
 app.get("/", (req, res) => {
   res.send("nada para ver aqui");

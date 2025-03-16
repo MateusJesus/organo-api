@@ -1,7 +1,9 @@
-const app = require("express")();
+const express = require("express");
 const cors = require("cors");
+const { v4: uuidv4 } = require("uuid");
 
-app.listen(3030, console.log("api running"));
+const app = express();
+const PORT = 3030;
 
 app.use(cors());
 app.use(express.json());
